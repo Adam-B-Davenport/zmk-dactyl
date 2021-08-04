@@ -1,0 +1,64 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#define DEFAULT 0
+#define NUMS 1
+#define SYMS 2
+#define OS   3
+#define KEEB 4
+
+#define HYPER(key) LS(LC(LA(LG(key))))
+#define MEH(key)   LS(LC(LA(key)))
+
+&sl {
+    release-after-ms = <5000>;
+};
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+    &kp DEL   &kp Q     &kp W    &kp E     &kp R     &kp T                    &kp Y     &kp U     &kp I     &kp O     &kp P    &kp BSLH
+    &kp BSPC  &kp A     &kp S    &kp D     &kp F     &kp G                    &kp H     &kp J     &kp K     &kp L     &kp SEMI &kp SQT
+    &kp LSHFT &kp Z     &kp X    &kp C     &kp V     &kp B                    &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH &kp RSHFT
+                                 &mo NUMS  &kp ESC   &kp TAB               &kp RET   &kp SPC  &mo SYMS
+                                 &kp N7    &kp N8                          &kp N9    &kp N0   
+            >;
+        };
+
+        num_layer {
+            bindings = <
+    &none   &kp N1   &kp N2   &kp N3   &kp N4   &kp N5                &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &none
+    &none   &kp EXCL &kp AT   &kp HASH &kp DLLR &kp PRCNT             &none   &none   &none   &none   &none   &none   
+    &none   &none   &none   &none   &none   &none                     &none   &none   &none   &none   &none   &none   
+                            &none   &none   &none                     &none   &none   &none   
+                                    &none   &none                     &none   &none   
+            >;
+        };
+
+        sym_layer {
+            bindings = <
+    &none   &none   &none   &none   &none   &none                     &none    &none   &none   &none   &none   &none   
+    &none   &none   &none   &none   &none   &none                     &kp EXCL &kp EQUAL &kp PLUS &kp MINUS   &none   &none   
+    &none   &none   &none   &none   &none   &none                     &none    &none   &none   &none   &none   &none   
+                            &none   &none   &none                     &none    &none   &none   
+                                    &none   &none                     &none    &none   
+            >;
+        };
+
+        keeb_layer {
+            bindings = <
+    &none   &none   &none   &none   &none   &none                     &none   &none   &none   &none   &none   &none   
+    &none   &none   &none   &none   &none   &none                     &none   &none   &none   &none   &none   &none   
+    &none   &none   &none   &none   &none   &none                     &none   &none   &none   &none   &none   &none   
+                            &none   &none   &none                     &none   &none   &none   
+                                    &none   &none                     &none   &none   
+            >;
+        };
+
+    };
+};
