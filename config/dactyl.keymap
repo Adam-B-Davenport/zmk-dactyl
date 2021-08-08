@@ -13,7 +13,7 @@
 #define MEH(key)   LS(LC(LA(key)))
 
 &sl {
-    release-after-ms = <5000>;
+    release-after-ms = <2000>;
 };
 
 / {
@@ -25,8 +25,8 @@
     &kp DEL   &kp Q     &kp W    &kp E     &kp R     &kp T                    &kp Y     &kp U     &kp I     &kp O     &kp P    &kp BSLH
     &kp BSPC  &kp A     &kp S    &kp D     &kp F     &kp G                    &kp H     &kp J     &kp K     &kp L     &kp SEMI &kp SQT
     &kp LSHFT &kp Z     &kp X    &kp C     &kp V     &kp B                    &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH &kp RSHFT
-                                 &mo NUMS  &kp ESC   &kp TAB               &kp RET   &kp SPC  &mo SYMS
-                                 &kp N7    &kp N8                          &kp N9    &kp N0   
+                                 &mo NUMS  &kp ESC   &kp TAB                  &kp RET   &kp SPC  &mo SYMS
+                                 &kp LCTRL &kp LGUI                           &sl OS     &kp LCTRL   
             >;
         };
 
@@ -50,11 +50,21 @@
             >;
         };
 
+        os_layer {
+            bindings = <
+&none &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N4) &kp LG(N5)               &kp LG(N6) &kp LG(N7) &kp LG(N8) &kp LG(N9) &kp LG(N0) &none   
+    &none   &none   &none   &none   &none   &none                     &none   &none   &none   &none   &none   &none   
+    &none   &none   &none   &none   &none   &none                     &none   &none   &none   &none   &none   &none   
+                            &none   &none   &none                     &none   &none   &none   
+                                    &none   &none                     &none   &none   
+            >;
+        };
+        
         keeb_layer {
             bindings = <
     &none   &none   &none   &none   &none   &none                     &none   &none   &none   &none   &none   &none   
     &none   &none   &none   &none   &none   &none                     &none   &none   &none   &none   &none   &none   
-    &none   &none   &none   &none   &none   &none                     &none   &none   &none   &none   &none   &none   
+    &none   &none   &none   &none   &none   &bootloader               &reset   &none   &none   &none   &none   &none   
                             &none   &none   &none                     &none   &none   &none   
                                     &none   &none                     &none   &none   
             >;
